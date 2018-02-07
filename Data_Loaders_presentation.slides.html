@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>MLP_Neon_presentation slides</title>
+<title>Data_Loaders_presentation slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11905,7 +11905,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Multi-Layer-Perceptron-for-MNIST-Dataset">Multi-Layer Perceptron for MNIST Dataset<a class="anchor-link" href="#Multi-Layer-Perceptron-for-MNIST-Dataset">&#182;</a></h1>
+<h2 id="Data-Loading">Data Loading<a class="anchor-link" href="#Data-Loading">&#182;</a></h2>
 </div>
 </div>
 </div></section><section>
@@ -11913,231 +11913,11 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Perceptron">Perceptron<a class="anchor-link" href="#Perceptron">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The most basic form of an activation function is a simple binary function that has only two possible results. A perceptron is a linear classifer to separate data between two features.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
-<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="k">import</span> <span class="n">HTML</span> 
-<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;https://sebastianraschka.com/images/blog/2015/singlelayer_neural_networks_files/perceptron_binary.png&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[42]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<img src="https://sebastianraschka.com/images/blog/2015/singlelayer_neural_networks_files/perceptron_binary.png"/>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Multi-Layer-Perceptron">Multi-Layer Perceptron<a class="anchor-link" href="#Multi-Layer-Perceptron">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A perceptron is a single neuron model that was a precursor to larger neural networks. The goal is to develop robust algorithms and data structures that we can use to model difficult problems.</p>
-<p>The power of neural networks come from their ability to learn the representation in your training data and how to best relate it to the output variable that you want to predict. In this sense neural networks learn a mapping.</p>
-<p>The predictive capability of neural networks comes from the multi-layered structure of the networks. The data structure can pick out (learn to represent) features at different scales or resolutions and combine them into higher-order features. For example from lines, to collections of lines to shapes.</p>
-<p>Therefore, the model is able to distinguish data that is not lineraly separable with one or more hidden layers.</p>
-<p>For more information on MLP visit <a href="https://machinelearningmastery.com/neural-networks-crash-course/">https://machinelearningmastery.com/neural-networks-crash-course/</a></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Hidden-layers">Hidden layers<a class="anchor-link" href="#Hidden-layers">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Hidden layers are called "hidden" because their values are not given in the input data. Instead, the previous layer of the model provides a new representation of the input.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;https://www.safaribooksonline.com/library/view/getting-started-with/9781786468574/graphics/B05474_04_05.jpg&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[43]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<img src="https://www.safaribooksonline.com/library/view/getting-started-with/9781786468574/graphics/B05474_04_05.jpg"/>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem">Problem<a class="anchor-link" href="#Problem">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>MINST is a database consisting of handwritten digits between 0-9. Each image is a 28 x 28 pixel grayscale for a total of 784 features.</p>
-<p>A multi-layer perceptron model is trained and tested on 70,000 images.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;https://guillaumebrg.files.wordpress.com/2016/01/mnist_and_mlp1.png?w=507&amp;h=222&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[41]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<img src="https://guillaumebrg.files.wordpress.com/2016/01/mnist_and_mlp1.png?w=507&h=222"/>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Generate-a-Backend">Generate a Backend<a class="anchor-link" href="#Generate-a-Backend">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Neon features highly optimized CPU (MKL) and GPU computational backends for fast matrix operations.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.backends</span> <span class="k">import</span> <span class="n">gen_backend</span>
-
-<span class="c1"># batch_size = (num of training examples per epoch)</span>
-<span class="n">gen_backend</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[20]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;neon.backends.nervanacpu.NervanaCPU at 0x10ca5ea20&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The neon backend is easily swappable, meaning that the same code will run for both the GPU and CPU backends.</p>
+<ul>
+<li>There are two components to working with data in neon   </li>
+<li>The first is a data iterator <strong>(NervanaDataIterator)</strong>, that feeds the model with minibatches of data during training or evaluation  </li>
+<li>The second is a dataset <strong>(Dataset)</strong> class, which handles the loading and preprocessing of the data    </li>
+</ul>
 
 </div>
 </div>
@@ -12146,7 +11926,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="MNIST-Data-Preparation">MNIST Data Preparation<a class="anchor-link" href="#MNIST-Data-Preparation">&#182;</a></h2>
+<h2 id="Data-Iterators">Data Iterators<a class="anchor-link" href="#Data-Iterators">&#182;</a></h2>
 </div>
 </div>
 </div></section><section>
@@ -12154,355 +11934,512 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The MNIST dataset can be found on Yann LeCunn’s website. Neon provides an easy function that downloads the MNIST dataset into your nervana/data/ directory and loads it into memory.</p>
+<ul>
+<li>Data iterators are python iterables in that they implement the <code>__iter__</code> method, which returns a new minibatch of data with each call  </li>
+<li>There are 2 kinds of Iterator classes that are used in Neon, depending on the size of the data.</li>
+<li>Custom Iterators can also be built for certain use cases by extending the below mentioned classes.</li>
+<li>If your data is small enough to fit into memory, you use the <code>ArrayIterator</code> Class in Neon  </li>
+<li>If your data is too large, you can save your data in the HDF5 format and use the <code>HDF5Iterator</code> Class, to load chunks of data to send to the model. This approach is flexible for any type of data.  </li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ArrayIterators">ArrayIterators<a class="anchor-link" href="#ArrayIterators">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The ArrayIterator class provides for iteration over minibatches of data that has been preloaded into memory as numpy arrays. </li>
+<li>This iterator supports classification, regression, and autoencoder tasks.</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Classification">Classification<a class="anchor-link" href="#Classification">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Below is an example of a classification problem statement with images where we load in 10,000 images. </li>
+<li>Each image is 32x32 pixels with 3 color channels (R, G, B), for a total of 32×32×3=3,072 features.</li>
+</ul>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">ArrayIterator</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">X are the features and y are the labels.</span>
+<span class="sd">The data in X must have shape (# examples, feature size)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="mi">3072</span><span class="p">)</span> <span class="c1"># X.shape = (10000, 3072)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">For classification, the labels y must have shape (# examples, 1). y must also</span>
+<span class="sd">consist of integers from 0 to nclass-1, where nclass is the number of categories.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span> <span class="c1"># y.shape = (10000, )</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The features X and labels y are passed to ArrayIterator be loaded into the backend</span>
+<span class="sd">nclass, the number of classes, is set to 10</span>
+<span class="sd">lshape, the local shape of the features, is set to (3,32,32) to represent</span>
+<span class="sd">        the the image dimensions: 32x32 pixels with 3 channels</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">ArrayIterator</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">nclass</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">lshape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Importantly, the labels y for classification should be integers from <strong>0</strong> to <strong>K−1</strong>, where <strong>K</strong> is the number of classes. </li>
+<li>These labels are stored in the backend in a one-hot representation. </li>
+<li>This means that if we have <strong>N</strong> labels with <strong>K</strong> classes, the labels will be stored in a <strong>N×K</strong> binary matrix. </li>
+<li>Each column will be all zeros except at the <strong>k-th</strong> element, which will be <strong>one</strong></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\begin{split}y = (0,0,1,3) \rightarrow \left( \begin{array}{cccccc}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+1 &amp; 0&amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1&amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 0&amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{array}  \right).\end{split}</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Regression">Regression<a class="anchor-link" href="#Regression">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>In regression, the model output for each training example is a vector <strong><em><em>y^</em></em></strong> that is compared against a desired vector <strong><em><em>y</em></em></strong> with a cost function (such as mean squared error).</li>
+<li>We first create the iterator. By default, ArrayIterator assumes classification, so for regression we must set <code>make_onehot = False</code> to turn off the one-hot representation.</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">ArrayIterator</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># We generate some random data as X</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># Add a bit of Noise to our data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">X</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.01</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">ArrayIterator</span><span class="p">(</span><span class="n">X</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">make_onehot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Autoencoders">Autoencoders<a class="anchor-link" href="#Autoencoders">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Autoencoders are a special case of regression where the desired outputs <strong><em><em>y</em></em></strong> are the input features <strong><em>X</em></strong>. </li>
+<li>For convenience, you can exclude passing the labels <strong><em><em>y</em></em></strong> to the iterator</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example construction of ArrayIterator for Autoencoder task with MNIST</span>
+<span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">MNIST</span>
+<span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">ArrayIterator</span>
+
+<span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">()</span>
+
+<span class="c1"># load the MNIST data</span>
+<span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="n">nclass</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="c1"># Set input and target to X_train</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">ArrayIterator</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">lshape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Sequential-Data">Sequential Data<a class="anchor-link" href="#Sequential-Data">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For sequence data, where data are fed to the model across multiple time steps, the shape of the input data can depend on your usage</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Word Embeddings</em></strong></p>
+<ul>
+<li>Often, data such as sentences are encoded as a vector sequence of integers, where each integer corresponds to a word in  the vocabulary.  </li>
+<li>This encoding is often used in conjunction with embedding layers.  </li>
+<li>In this case, the input data should be formatted to have shape <strong><em><em>(T,N)</em></em></strong>, where <strong><em>T</em></strong> is the number of time steps and <strong>N</strong> is the batch size.  </li>
+<li>The embedding layer takes this input and provides as output to a subsequent recurrent neural network data of shape <strong>(F,T∗N)</strong>, where <strong>F</strong> is the number of features (in this case, the embedding dimension). For an example, see imdb_lstm.py  </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Time Series</em></strong></p>
+<ul>
+<li>Time series data should be formatted to have shape <strong><em>(F,T∗N)</em></strong>  <ul>
+<li>where<br>
+<strong>F</strong> is the number of features<br>
+<strong>T</strong> is the number of timesteps/interval<br>
+<strong>N</strong> is the Batch Size (user controlled)</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="HDF5Iterator">HDF5Iterator<a class="anchor-link" href="#HDF5Iterator">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>What is HDF5 ?</strong></p>
+<ul>
+<li>HDF5 is a unique technology suite that makes possible the management of extremely large and complex data collections.</li>
+<li>A versatile data model that can represent very complex data objects and a wide variety of metadata.</li>
+<li>A completely portable file format with no limit on the number or size of data objects in the collection.</li>
+<li>A software library that runs on a range of computational platforms, from laptops to massively parallel systems, and implements a high-level API with C, C++, Fortran 90, and Java interfaces.</li>
+<li>A rich set of integrated performance features that allow for access time and storage space optimizations.</li>
+<li>Tools and applications for managing, manipulating, viewing, and analyzing the data in the collection.</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>HDF5Iterator</code> uses an HDF5 formatted data file to store the input and target data arrays so the data size is not limited by on-host and/or on-device memory capacity.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To use the <code>HDF5Iterator</code>, the data arrays need to be stored in an HDF5 file with the following format:</p>
+<ul>
+<li>The input data is in an HDF5 dataset named input and the target output, if needed, in a dataset named output. The data arrays are of the same format as the arrays used to initialize the <code>ArrayIterator</code> class.  </li>
+<li>The input data class also requires an attribute named lshape which specifies the shape of the flattened input data array</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For alternate target label formats, such as converting the targets to a one-hot vector, or for autoencoder data, the <code>HDF5IteratorOneHot</code> and <code>HDF5IteratorAutoencoder</code> subclasses are included. These subclasses demonstrate how to extend the <code>HDF5Iterator</code> to handle different input and target data formats or transformations.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">HDF5IteratorOneHot</span><span class="p">,</span> <span class="n">MNIST</span>
+<span class="kn">import</span> <span class="nn">h5py</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># load up the mnist data set</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">data_dir</span><span class="p">)</span>
+<span class="c1"># split into train and tests sets</span>
+<span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="n">nclass</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="n">datsets</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;train&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span>
+           <span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)}</span>
+
+<span class="k">for</span> <span class="n">ky</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">]:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="s1">&#39;mnist_</span><span class="si">%s</span><span class="s1">.h5&#39;</span> <span class="o">%</span> <span class="n">ky</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="c1"># input images</span>
+    <span class="n">in_dat</span> <span class="o">=</span> <span class="n">datsets</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">in_dat</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;lshape&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>  <span class="c1"># (C, H, W)</span>
+
+    <span class="n">target</span> <span class="o">=</span> <span class="n">datsets</span><span class="p">[</span><span class="n">ky</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># make it a 2D array</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">create_dataset</span><span class="p">(</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;nclass&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># setup a training set iterator</span>
+<span class="c1"># use the iterator that generates 1-hot output. other HDF5Iterator (sub) classes are</span>
+<span class="c1"># available for different data layouts</span>
+<span class="n">train_set</span> <span class="o">=</span> <span class="n">HDF5IteratorOneHot</span><span class="p">(</span><span class="s1">&#39;mnist_train.h5&#39;</span><span class="p">)</span>
+<span class="n">valid_set</span> <span class="o">=</span> <span class="n">HDF5IteratorOneHot</span><span class="p">(</span><span class="s1">&#39;mnist_test.h5&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Datasets">Datasets<a class="anchor-link" href="#Datasets">&#182;</a></h2>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Dataset class is a base class for commonly-used datasets.  </li>
+<li>We recommend creating an object class for your dataset that handles the loading and preprocessing of the data. </li>
+<li>Datasets should implement <code>gen_iterators()</code>, which returns a dictionary data iterator used for training and evaluation</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Neon provides dataset objects for handling many stock datasets.</em></strong></p>
+<p>They are as follows:</p>
+<ul>
+<li>MNIST, is a dataset of handwritten digits, consisting of 60,000 training samples and 10,000 test samples. Each image is 28x28 greyscale pixels.  </li>
+<li>CIFAR10, is a dataset consisting of 50,000 training samples and 10,000 test samples. There are 10 categories and each sample is a 32x32 RGB color image.  </li>
+<li>Text datasets (e.g. Penn Treebank, Hutter Prize, and Shakespeare), we have object classes for loading, and sometimes pre-processing, the data.  </li>
+<li>ImageNet</li>
+</ul>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="MNIST">MNIST<a class="anchor-link" href="#MNIST">&#182;</a></h5>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">MNIST</span>
 
+<span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;path/to/save/downloadeddata/&#39;</span><span class="p">)</span>
+<span class="n">train_set</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">train_iter</span>
+<span class="n">valid_set</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">valid_iter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="CIFAR10">CIFAR10<a class="anchor-link" href="#CIFAR10">&#182;</a></h5>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">CIFAR10</span>
+
+<span class="n">cifar10</span> <span class="o">=</span> <span class="n">CIFAR10</span><span class="p">()</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">cifar10</span><span class="o">.</span><span class="n">train_iter</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">cifar10</span><span class="o">.</span><span class="n">valid_iter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="Penn-Tree-Bank">Penn Tree Bank<a class="anchor-link" href="#Penn-Tree-Bank">&#182;</a></h5>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">PTB</span>
+
+<span class="c1"># download Penn Treebank and parse at the word level</span>
+<span class="n">ptb</span> <span class="o">=</span> <span class="n">PTB</span><span class="p">(</span><span class="n">time_steps</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="s2">&quot;newline_tokenizer&quot;</span><span class="p">)</span>
+<span class="n">train_set</span> <span class="o">=</span> <span class="n">ptb</span><span class="o">.</span><span class="n">train_iter</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Low-level-dataset-operations">Low level dataset operations<a class="anchor-link" href="#Low-level-dataset-operations">&#182;</a></h4>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Some applications require access to the underlying data to generate more complex data iterators. </li>
+<li>This can be done by using the load_data method of the DataSet class and its subclasses. </li>
+<li>The method returns the data arrays which are used to generate the data iterators</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># For example, the code below shows how to generate a data iterator to train an autoencoder on the MNIST dataset</span>
+
+<span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">MNIST</span>
+<span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">ArrayIterator</span>
+
 <span class="n">mnist</span> <span class="o">=</span> <span class="n">MNIST</span><span class="p">()</span>
-
+<span class="c1"># get the raw data arrays, both train set and validation set</span>
 <span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">),</span> <span class="n">nclass</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+
+<span class="c1"># generate and ArrayIterator with no target data</span>
+<span class="c1"># this will return the image itself as the target</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">ArrayIterator</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">lshape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">))</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This function automatically splits the images X and labels y into training (60,000 examples) and testing (10,000 examples) data. The training images X_train is a numpy array with shape (num_examples, num_features) = (60000, 784)</p>
-<p>Nclass is set to 10 to represent the 10 classes that need to be classified (digits: 0-9)</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To view a sample image in the training dataset, reshape the numpy array (28, 28) and load the image using matplotlib.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="c1"># Show first three images in train data</span>
-    <span class="n">sample_image</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sample_image</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-DwRF+IGg/g9u3HZr7xcc8gAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>During training, neon iterates over the training examples to compute the gradients. We use the following commands to set up the ArrayIterator object that we send to the optimizer.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.data</span> <span class="k">import</span> <span class="n">ArrayIterator</span>
-
-<span class="c1">#  (num_examples, num_features) = (60000, 784).</span>
-<span class="n">train_set</span> <span class="o">=</span> <span class="n">ArrayIterator</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">nclass</span><span class="o">=</span><span class="n">nclass</span><span class="p">)</span>
-<span class="c1">#  (num_examples, num_features) = (10000, 784).</span>
-<span class="n">test_set</span> <span class="o">=</span> <span class="n">ArrayIterator</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">nclass</span><span class="o">=</span><span class="n">nclass</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Since MNIST is a small dataset, the set up for the ArrayIterator object is relatively easy. However, for large datasets that cannot fit into memory (e.g. ImageNet or Sports-1M), the data has to be efficiently loaded and fed to the optimizer in batches. This requires more advanced iterators described in Loading Data.</p>
-
-</div>
-</div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-specification">Model specification<a class="anchor-link" href="#Model-specification">&#182;</a></h2>
+<h3 id="Useful-Resources">Useful Resources<a class="anchor-link" href="#Useful-Resources">&#182;</a></h3>
 </div>
 </div>
 </div></section><section>
@@ -12510,656 +12447,14 @@ RfmBpCg/kBTlB5Ki/EBSlB9I6v8BZOIGXzoUqLUAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Hyperparameters required to the deep learning model:</p>
 <ul>
-<li>a list of layers</li>
-<li>a cost function</li>
-<li>a learning rule</li>
+<li>Neon Documentation : <a href="http://neon.nervanasys.com/docs/latest/index.html">http://neon.nervanasys.com/docs/latest/index.html</a>  </li>
+<li>Neon Examples : <a href="https://github.com/NervanaSystems/neon/tree/master/examples">https://github.com/NervanaSystems/neon/tree/master/examples</a></li>
+<li>Github Repo : <a href="https://github.com/NervanaSystems/neon">https://github.com/NervanaSystems/neon</a></li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Model-architecture:-Layers">Model architecture: Layers<a class="anchor-link" href="#Model-architecture:-Layers">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Initializing-weights">Initializing weights<a class="anchor-link" href="#Initializing-weights">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Neon contains an array of intializers. For the MLP MNIST tutorial we intialize the weights using a Gaussian distribution with zero mean and 0.01 standard deviation.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.initializers</span> <span class="k">import</span> <span class="n">Gaussian</span>
-
-<span class="k">def</span> <span class="nf">initialize_weights</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This is a function to Initialize the weights using a Normal Gaussian Distribution </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">init_norm</span> <span class="o">=</span> <span class="n">Gaussian</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">init_norm</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Affine-layer-object">Affine layer object<a class="anchor-link" href="#Affine-layer-object">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Neon creates linear layers using Affine function. The parameters required are:</p>
-<ul>
-<li>nout: desired zie or shape of layer output</li>
-<li>init: initializer object to use for initializing layer weights</li>
-<li>activation: defines the output of the node</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.layers</span> <span class="k">import</span> <span class="n">Affine</span>
-
-<span class="k">def</span> <span class="nf">createAffine</span><span class="p">(</span><span class="n">n_hidden</span><span class="p">,</span><span class="n">activation_func</span><span class="p">,</span><span class="n">weight_init</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method creates a AFFINE (Fully Connected Hidden Layer). </span>
-<span class="sd">    This is a normal linear layer used in Neural Networks.</span>
-<span class="sd">    </span>
-<span class="sd">    Params:</span>
-<span class="sd">    @ n_hidden        : No of hidden units to use in the layer</span>
-<span class="sd">    @ weight_init     : The weight Initializer to be used to initialize weights in this layer</span>
-<span class="sd">    @ activation_func : The activation function to be used in the layer</span>
-<span class="sd">    </span>
-<span class="sd">    Returns:</span>
-<span class="sd">    Affine Layer Object</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">Affine</span><span class="p">(</span><span class="n">nout</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="n">weight_init</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">activation_func</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Create-hidden-layers">Create hidden layers<a class="anchor-link" href="#Create-hidden-layers">&#182;</a></h4>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.transforms</span> <span class="k">import</span> <span class="n">Rectlin</span><span class="p">,</span> <span class="n">Softmax</span>
-
-<span class="k">def</span> <span class="nf">create_hidden_layers</span><span class="p">(</span><span class="n">layers</span><span class="p">,</span>
-                         <span class="n">no_of_layers</span><span class="p">,</span>
-                         <span class="n">hidden_unit_list</span><span class="p">,</span>
-                         <span class="n">activ_func_list</span><span class="p">,</span>
-                         <span class="n">weight_init_list</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    This method creates the complete hidden layer architecture.</span>
-<span class="sd">    </span>
-<span class="sd">    Params:</span>
-<span class="sd">    @ layers           : This is a list containing any previous layers or no layers </span>
-<span class="sd">    @ no_of_layers     : The no of hidden layers to create</span>
-<span class="sd">    @ hidden_unit_list : A list of no of hidden units to use in each layer</span>
-<span class="sd">    @ activ_func_list  : A list of Activation functions to be used in each layer</span>
-<span class="sd">    @ weight_init_list : A list of weight initializers to be used in each layer</span>
-<span class="sd">    </span>
-<span class="sd">    Returns:</span>
-<span class="sd">    A list of the newly created hidden layers</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">for</span> <span class="n">index</span><span class="p">,</span><span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hidden_unit_list</span><span class="p">):</span>
-        <span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">createAffine</span><span class="p">(</span><span class="n">n_hidden</span><span class="o">=</span><span class="n">num</span><span class="p">,</span>
-                                   <span class="n">weight_init</span><span class="o">=</span><span class="n">weight_init_list</span><span class="p">[</span><span class="n">index</span><span class="p">],</span>
-                                   <span class="n">activation_func</span><span class="o">=</span><span class="n">activ_func_list</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
-    <span class="k">return</span> <span class="n">layers</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The model is specified as a list of layers. For classifying MNIST images, we use a multi-layer perceptron with fully connected layers.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">no_of_layers</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">hidden_unit_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<span class="n">activ_func_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">Rectlin</span><span class="p">(),</span><span class="n">Rectlin</span><span class="p">(),</span><span class="n">Softmax</span><span class="p">()]</span>
-<span class="n">weight_init_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">initialize_weights</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hidden_unit_list</span><span class="p">))]</span>
-<span class="n">layers</span> <span class="o">=</span> <span class="n">create_hidden_layers</span><span class="p">(</span><span class="n">layers</span><span class="p">,</span>
-                              <span class="n">no_of_layers</span><span class="p">,</span>
-                              <span class="n">hidden_unit_list</span><span class="p">,</span>
-                              <span class="n">activ_func_list</span><span class="p">,</span>
-                              <span class="n">weight_init_list</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Three Affine layers are created:</p>
-<ul>
-<li>1st hidden layer with 30 hidden units and a rectified linear activation function, Rectlin()</li>
-<li>2nd hidden layer with 50 hidden units and a rectified linear activation function, Rectlin()</li>
-<li>Output layer with 10 units to match the number of labels (classes) in the MNIST dataset. Activation function Softmax() is used to ensure the outputs sume to one and are within the range [0,1]</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Initalize-model-object">Initalize model object<a class="anchor-link" href="#Initalize-model-object">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Construct the model</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.models</span> <span class="k">import</span> <span class="n">Model</span>
-
-<span class="n">mlp</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="n">layers</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cost">Cost<a class="anchor-link" href="#Cost">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The cost function is wrapped within a GeneralizedCost layer, which handles the comparison of the outputs with the provided labels in the dataset. One common cost function which we use here is the cross entropy loss.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.layers</span> <span class="k">import</span> <span class="n">GeneralizedCost</span>
-<span class="kn">from</span> <span class="nn">neon.transforms</span> <span class="k">import</span> <span class="n">CrossEntropyMulti</span>
-
-<span class="n">cost</span> <span class="o">=</span> <span class="n">GeneralizedCost</span><span class="p">(</span><span class="n">costfunc</span><span class="o">=</span><span class="n">CrossEntropyMulti</span><span class="p">())</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Benefits of cost function:</p>
-<ul>
-<li>make our networks better at genearlizing beyond the training data</li>
-<li>better method for intializing the weights in the network</li>
-<li>set of heuristics to help choose good hyper-parameters</li>
-</ul>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Learning-rules">Learning rules<a class="anchor-link" href="#Learning-rules">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For learning, we use stochastic gradient descent with a learning rate of 0.1 and momentum coefficient of 0.9.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.optimizers</span> <span class="k">import</span> <span class="n">GradientDescentMomentum</span>
-
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">GradientDescentMomentum</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">momentum_coef</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Callbacks">Callbacks<a class="anchor-link" href="#Callbacks">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Neon provides an API for calling operations during the model fit. Here we set up the default callback, which is displaying a progress bar for each epoch.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.callbacks.callbacks</span> <span class="k">import</span> <span class="n">Callbacks</span>
-<span class="kn">from</span> <span class="nn">neon.callbacks.callbacks</span> <span class="k">import</span> <span class="n">ProgressBarCallback</span>
-
-<span class="n">callbacks</span> <span class="o">=</span> <span class="n">Callbacks</span><span class="p">(</span><span class="n">mlp</span><span class="p">,</span> <span class="n">eval_set</span><span class="o">=</span><span class="n">test_set</span><span class="p">)</span>
-<span class="n">callbacks</span><span class="o">.</span><span class="n">add_callback</span><span class="p">(</span><span class="n">ProgressBarCallback</span><span class="p">())</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Fit-the-model">Fit the model<a class="anchor-link" href="#Fit-the-model">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>At the beginning of the fitting procedure, neon propagates train_set through the model to set the input and output shapes of each layer. Each layer has a configure() method that determines the appropriate layer shapes, and an allocate() method to set up the needed buffers for holding the forward propagation information.</p>
-<p>During the training, neon sends batches of the training data through the model, calling each layers’ fprop() and bprop() methods to compute the gradients and update the weights.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">train_set</span><span class="p">,</span>
-        <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span>
-        <span class="n">num_epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c1"># epoch = (num of passes of all the training examples)</span>
-        <span class="n">cost</span><span class="o">=</span><span class="n">cost</span><span class="p">,</span>
-        <span class="n">callbacks</span><span class="o">=</span><span class="n">callbacks</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch 0   [Train |████████████████████|  469/469  batches, 0.24 cost, 3.39s]
-
-Epoch 1   [Train |████████████████████|  469/469  batches, 0.15 cost, 3.71s]
-
-Epoch 2   [Train |████████████████████|  469/469  batches, 0.12 cost, 3.91s]
-
-Epoch 3   [Train |████████████████████|  468/468  batches, 0.11 cost, 3.83s]
-
-Epoch 4   [Train |████████████████████|  468/468  batches, 0.12 cost, 3.94s]
-
-Epoch 5   [Train |████████████████████|  468/468  batches, 0.11 cost, 3.97s]
-
-Epoch 6   [Train |████████████████████|  468/468  batches, 0.12 cost, 3.98s]
-
-Epoch 7   [Train |████████████████████|  468/468  batches, 0.09 cost, 4.16s]
-
-Epoch 8   [Train |████████████████████|  468/468  batches, 0.09 cost, 3.94s]
-
-Epoch 9   [Train |████████████████████|  468/468  batches, 0.09 cost, 3.90s]
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-the-trained-model">Using the trained model<a class="anchor-link" href="#Using-the-trained-model">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The model is now trained, we can used the trained modelto classify an image, measure performance, and visualize the weights and training results.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inference">Inference<a class="anchor-link" href="#Inference">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Given the images from the test_set, fetch the output of the final model layer.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># (num_test_examples, num_outputs) = (10000,10)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">mlp</span><span class="o">.</span><span class="n">get_outputs</span><span class="p">(</span><span class="n">test_set</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Performance">Performance<a class="anchor-link" href="#Performance">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Neon supports convenience functions for evaluating performance using custom metrics. Here we measure the misclassification rate on the held out test set.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">neon.transforms</span> <span class="k">import</span> <span class="n">Misclassification</span>
-
-<span class="c1"># evaluate the model on test_set using the misclassification metric</span>
-<span class="n">error</span> <span class="o">=</span> <span class="n">mlp</span><span class="o">.</span><span class="n">eval</span><span class="p">(</span><span class="n">test_set</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="n">Misclassification</span><span class="p">())</span><span class="o">*</span><span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Misclassification error = </span><span class="si">%.1f%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">error</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Misclassification error = 5.5%
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="View-misclassified-images">View misclassified images<a class="anchor-link" href="#View-misclassified-images">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">misclassified_img</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">row</span><span class="p">]</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">y_test</span><span class="p">[</span><span class="n">row</span><span class="p">])</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
-        <span class="n">misclassified_img</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
-
-<span class="n">a</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="n">misclassified_img</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-<span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model misclassified image as:&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Correct image label is:&#39;</span><span class="p">,</span> <span class="n">y_test</span><span class="p">[</span><span class="n">misclassified_img</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">misclassified_img</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Model misclassified image as: 7
-Correct image label is: 9
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-Hwjq/wHNw1a+oGwPlwAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div></section></section>
 </div>
 </div>
