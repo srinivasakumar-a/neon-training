@@ -11921,14 +11921,14 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The most basic form of an activation function is a simple binary function that has only two possible results. A perceptron is a linear classifer to separate data between two features.</p>
+<p>A perceptron is a single neuron model that is a precursor to larger neural networks. It is a simple binary classifer (linear) to separate data between two features.</p>
 
 </div>
 </div>
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">Image</span>
@@ -11946,7 +11946,7 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -11972,10 +11972,9 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A perceptron is a single neuron model that was a precursor to larger neural networks. The goal is to develop robust algorithms and data structures that we can use to model difficult problems.</p>
-<p>The power of neural networks come from their ability to learn the representation in your training data and how to best relate it to the output variable that you want to predict. In this sense neural networks learn a mapping.</p>
+<p>The goal is to develop robust algorithms and data structures that we can use to model difficult problems.</p>
+<p>The power of neural networks come from their ability to <strong>learn the representation</strong> in your training data and how to best relate it to the output variable that you want to predict. In this sense neural networks learn a mapping.</p>
 <p>The predictive capability of neural networks comes from the multi-layered structure of the networks. The data structure can pick out (learn to represent) features at different scales or resolutions and combine them into higher-order features. For example from lines, to collections of lines to shapes.</p>
-<p>Therefore, the model is able to distinguish data that is not lineraly separable with one or more hidden layers.</p>
 <p>For more information on MLP visit <a href="https://machinelearningmastery.com/neural-networks-crash-course/">https://machinelearningmastery.com/neural-networks-crash-course/</a></p>
 
 </div>
@@ -12000,7 +11999,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;https://www.safaribooksonline.com/library/view/getting-started-with/9781786468574/graphics/B05474_04_05.jpg&quot;</span><span class="p">)</span>
@@ -12016,12 +12015,53 @@ a.anchor-link {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <img src="https://www.safaribooksonline.com/library/view/getting-started-with/9781786468574/graphics/B05474_04_05.jpg"/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Example of different representations between hidden layers:</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span> <span class="s2">&quot;http://playground.tensorflow.org/preview.png&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<img src="http://playground.tensorflow.org/preview.png"/>
 </div>
 
 </div>
@@ -12564,7 +12604,7 @@ RfmBpCg/kBTlB5Ki/EBSlB9I6v8BZOIGXzoUqLUAAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12579,7 +12619,7 @@ RfmBpCg/kBTlB5Ki/EBSlB9I6v8BZOIGXzoUqLUAAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Neon creates linear layers using Affine function. The parameters required are:</p>
 <ul>
-<li>nout: desired zie or shape of layer output</li>
+<li>nout: desired size or shape of layer output</li>
 <li>init: initializer object to use for initializing layer weights</li>
 <li>activation: defines the output of the node</li>
 </ul>
@@ -12614,7 +12654,7 @@ RfmBpCg/kBTlB5Ki/EBSlB9I6v8BZOIGXzoUqLUAAAAASUVORK5CYII=
 </div>
 </div>
 
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12938,7 +12978,7 @@ Epoch 9   [Train |████████████████████| 
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
